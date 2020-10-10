@@ -7,10 +7,9 @@ const MongoClient = mongo.MongoClient;
 
 const app = express();
 const port = process.env.PORT || 8900;
-const Mongo_Url = 'mongodb+srv://Mahesh290501:Mahesh290501@cluster0.qmby2.mongodb.net/Zomato?retryWrites=true&w=majority';
+const Mongo_Url = "mongodb+srv://Mahesh290501:Mahesh290501@cluster0.qmby2.mongodb.net/Zomato?retryWrites=true&w=majority";
 
 var db;
-var col_name ;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
