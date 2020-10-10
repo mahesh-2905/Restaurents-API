@@ -1,0 +1,35 @@
+Rest on the basis of city -----
+Rest on the basis of meal type ------
+Rest details  -------
+Rest on the basis of cuisine and mealtype -----
+Rest on the basis of cost  and mealtype ------
+Rest on the basis of city  and mealtype-----
+
+db.restaurent.find({            
+    type:{$elemMatch:{mealtype:"1"}}
+})
+
+
+db.restaurent.find({
+    Cuisine:{$elemMatch:{cuisine:"1"}}
+})
+
+db.restaurent.find({
+    type:{$elemMatch:{mealtype:"1"}},
+    Cuisine:{$elemMatch:{cuisine:"1"}}
+})
+db.restaurent.find({
+    "type.mealtype":"1",
+    "Cuisine.cuisine":"1"
+})
+
+db.restaurent.find({
+    $and:[
+        {type:{$elemMatch:{mealtype:"1"}}},
+        {Cuisine:{$elemMatch:{cuisine:"1"}}}]  
+})
+
+db.restaurent.find({
+    city:"1",
+    type:{$elemMatch:{mealtype:"1"}}
+})
