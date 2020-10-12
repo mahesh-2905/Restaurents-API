@@ -51,7 +51,7 @@ app.get('/cuisine',(req,res)=>{
 app.get('/mealtypes',(req,res)=>{
      var query={ }
     if(req.query.type){
-        query={_id:req.query.type};
+        query={_id:Number(req.query.type)};
     }
     else{
         query={ }
