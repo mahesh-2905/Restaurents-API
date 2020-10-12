@@ -48,8 +48,15 @@ app.get('/cuisine',(req,res)=>{
 
 
 //List of MealTypes
-app.get('/mealtypes',(req,res)=>{
-    db.collection('mealType').find({}).toArray((err,result)=>{
+app.get('/mealtypes/:id',(req,res)=>{
+     var query={ }
+    if(req.params.id){
+        query={_id:req.params.id};
+    }
+    else{
+        query={ }
+    }
+    db.collection('mealType').find(query).toArray((err,result)=>{
         res.send(result);
     });
 });
