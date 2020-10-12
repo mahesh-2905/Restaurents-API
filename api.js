@@ -48,10 +48,10 @@ app.get('/cuisine',(req,res)=>{
 
 
 //List of MealTypes
-app.get('/mealtypes/:id',(req,res)=>{
+app.get('/mealtypes',(req,res)=>{
      var query={ }
-    if(req.params.id){
-        query={_id:req.params.id};
+    if(req.query.type){
+        query={_id:req.query.type};
     }
     else{
         query={ }
