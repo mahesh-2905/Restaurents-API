@@ -69,6 +69,13 @@ app.get('/orders',(req,res)=>{
     });
 });
 
+//Post orders
+app.post('/orders',(req,res)=>{
+    db.collections('orders').insert(req.body,(err,result)=>{
+        if(err) throw err
+        res.send("posted sucessfully");
+    })
+})
 
 //Restaurent
 app.get('/restaurents',(req,res)=>{
