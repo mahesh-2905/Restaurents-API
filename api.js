@@ -13,6 +13,7 @@ var db;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 // setting the type of template engine
 app.set('view engine','ejs');
@@ -71,10 +72,12 @@ app.get('/orders',(req,res)=>{
 
 //Post orders
 app.post('/orders',(req,res)=>{
-    db.collections('orders').insert(req.body,(err,result)=>{
+    db.collection('orders').insert(req.body,(err,result)=>{
         if(err) throw err
         res.send("posted sucessfully");
     })
+    // console.log(req.body);
+    // res.send("posted");
 })
 
 //Restaurent
